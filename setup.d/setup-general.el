@@ -13,7 +13,23 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
-;; Quitting emacs via `C-x C-c` or the GUI 'X' button
+;; quitting emacs via `C-x C-c` or the GUI 'X' button
 (setq confirm-kill-emacs #'y-or-n-p)
+
+;; below require will auto-create `package-user-dir' if it doesn't exist.
+(require 'package)
+
+(setq package-enable-at-startup nil
+      package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("gnu" . "https://elpa.gnu.org/packages/")))
+
+;; install/setup use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(eval-when-compile
+  (require 'use-package))
+
+(setq use-package-always-ensure t)
 
 (provide 'setup-general)
