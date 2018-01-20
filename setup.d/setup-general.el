@@ -13,4 +13,7 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
+;; Quitting emacs via `C-x C-c` or the GUI 'X' button
+(setq confirm-kill-emacs #'y-or-n-p)
+
 (provide 'setup-general)
