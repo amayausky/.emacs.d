@@ -23,6 +23,11 @@
       package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("gnu" . "https://elpa.gnu.org/packages/")))
 
+;; install/setup diminish
+(unless (package-installed-p 'diminish)
+  (package-refresh-contents)
+  (package-install 'diminish))
+
 ;; install/setup use-package
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
