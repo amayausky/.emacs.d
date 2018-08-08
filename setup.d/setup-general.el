@@ -13,9 +13,6 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
-;; quitting emacs via `C-x C-c` or the GUI 'X' button
-(setq confirm-kill-emacs #'y-or-n-p)
-
 ;; below require will auto-create `package-user-dir' if it doesn't exist.
 (require 'package)
 
