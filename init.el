@@ -18,7 +18,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (counsel-projectile projectile counsel ## yaml-mode use-package))))
+    (zoom counsel-projectile projectile counsel ## yaml-mode use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -29,3 +29,4 @@
 ;; load and setup packages
 (require 'setup-ivy)
 (require 'setup-projectile)
+(require 'setup-zoom)
