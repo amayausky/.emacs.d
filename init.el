@@ -28,3 +28,4 @@
 
 ;; load and setup packages
 (require 'setup-ivy)
+(require 'setup-projectile)
