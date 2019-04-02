@@ -1,32 +1,33 @@
-;; load folder containing additional setup files
+;;; init.el --- Initialization file
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
+;;; Commentary:
+
+;;; Code:
 
 (add-to-list 'load-path (concat user-emacs-directory "setup.d/"))
 
 ;; general, non-package specific setup
 (require 'setup-general)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (zoom counsel-projectile projectile counsel ## yaml-mode use-package))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; install use-package
+(require 'setup-use-package)
 
-;; load and setup packages
+;; load and setup packages here
+(require 'setup-nlinum)
+(require 'setup-diminish)
+(require 'setup-exec-path-from-shell)
+(require 'setup-theme)
+(require 'setup-flycheck)
+(require 'setup-company)
+(require 'setup-go-mode)
+(require 'setup-yaml-mode)
+(require 'setup-json-mode)
+(require 'setup-markdown-mode)
+(require 'setup-magit)
 (require 'setup-ivy)
+(require 'setup-counsel)
 (require 'setup-projectile)
-(require 'setup-zoom)
+(require 'setup-ace-window)
+
+(provide 'init)
+;;; init.el ends here
