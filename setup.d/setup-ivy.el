@@ -1,12 +1,8 @@
-(use-package counsel
-  :diminish counsel-mode
-  :config
-  (counsel-mode 1))
+;;; setup-ivy.el -- Installs ivy
 
-(use-package counsel-projectile
-  :after projectile counsel
-  :config
-  (counsel-projectile-mode 1))
+;;; Commentary:
+
+;;; Code:
 
 (use-package ivy :ensure t
   :diminish ivy-mode
@@ -18,3 +14,4 @@
 (global-set-key "\C-s" 'swiper)
 
 (provide 'setup-ivy)
+;;; setup-ivy ends here
