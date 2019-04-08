@@ -30,7 +30,7 @@
   "Runs go install -i ./... on current package."
   (append
    (condition-case nil
-       (process-lines "go" "install" "-i" "./...")
+       (process-lines "govendor" "install" "+vendor" "./...")
      (error ()))))
 
 (defun go-mode-hook ()
@@ -40,7 +40,7 @@
   (add-hook 'before-save-hook 'amayausky-go-install-function)
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
-	   "go vet && go install -i ./..."))
+	   "go vet && govendor install +vendor ./..."))
   (add-to-list 'company-backends 'company-go)
   (company-mode)
   (rats-mode)
