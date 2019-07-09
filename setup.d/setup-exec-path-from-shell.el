@@ -9,7 +9,8 @@
   :config
   (setq
    exec-path-from-shell-variables '("PATH"))
-  (exec-path-from-shell-initialize))
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-env "GOPATH"))
 
 (provide 'setup-exec-path-from-shell)
 ;;; setup-exec-path-from-shell ends here
