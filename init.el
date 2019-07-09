@@ -28,6 +28,7 @@
 (require 'setup-counsel)
 (require 'setup-projectile)
 (require 'setup-ace-window)
+(require 'setup-org-mode)
 
 (provide 'init)
 ;;; init.el ends here
