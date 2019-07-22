@@ -46,5 +46,7 @@
   :config
   (add-hook 'go-mode-hook 'go-mode-hook))
 
+(add-hook 'go-mode-hook #'lsp-deferred)
+
 (provide 'setup-go-mode)
 ;;; setup-go-mode ends here
