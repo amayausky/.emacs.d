@@ -26,18 +26,10 @@
 (use-package go-rename
   :ensure t)
 
-(defun amayausky-go-install-function ()
-  "Runs go install -i ./... on current package."
-  (append
-   (condition-case nil
-       (process-lines "govendor" "install" "+vendor" "./...")
-     (error ()))))
-
 (defun go-mode-hook ()
   (setq tab-width 4)
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
-  (add-hook 'before-save-hook 'amayausky-go-install-function)
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
 	   "go vet && govendor install +vendor ./..."))
