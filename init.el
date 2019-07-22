@@ -31,6 +31,7 @@
 (require 'setup-projectile)
 (require 'setup-ace-window)
 (require 'setup-org-mode)
+(require 'setup-plantuml-mode)
 
 (provide 'init)
 ;;; init.el ends here
