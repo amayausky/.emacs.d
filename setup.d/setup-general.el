@@ -34,12 +34,12 @@
 ;; below require will auto-create `package-user-dir' if it doesn't exist.
 (require 'package)
 (setq package-enable-at-startup nil
-      package-archives '(("stable" . "https://stable.melpa.org/packages/")
-			 ("melpa"  . "https://melpa.org/packages/")
-                         ("gnu"    . "https://elpa.gnu.org/packages/"))
-      package-archive-priorities '(("stable" . 10)
-				   ("gnu"    . 5)
-				   ("melpa"  . 0)))
+      package-archives '(("melpa-stable" . "https://stable.melpa.org/packages/")
+			 ("melpa"        . "https://melpa.org/packages/")
+                         ("gnu"          . "https://elpa.gnu.org/packages/"))
+      package-archive-priorities '(("melpa"        . 10)
+				   ("melpa-stable" . 5)
+				   ("gnu"          . 0)))
 (package-initialize)
 
 (provide 'setup-general)
