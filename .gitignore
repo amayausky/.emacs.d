@@ -17,3 +17,4 @@ network-security.data
 transient/
 recentf
 .lsp*
+.last-package-update-day
