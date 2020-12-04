@@ -5,18 +5,26 @@
 ;;; Code:
 
 (use-package lsp-mode
+  :ensure t
   :commands (lsp lsp-deferred)
-  :ensure t)
+  :hook (go-mode . lsp-deferred))
+
+;; Set up before-save hooks to format buffer and add/delete imports.
+;; Make sure you don't have other gofmt/goimports hooks enabled.
+(defun lsp-go-install-save-hooks ()
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'lsp-organize-imports t t))
+(add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 
 ;; optional - provides fancier overlays
 (use-package lsp-ui
-  :commands lsp-ui-mode
-  :ensure t)
+  :ensure t
+  :commands lsp-ui-mode)
 
-;; if you use company-mode for completion (otherwise, complete-at-point works out of the box):
 (use-package company-lsp
-  :commands company-lsp
-  :ensure t)
+  :ensure t
+  :commands company-lsp)
+(push 'company-lsp company-backends)
 
 (provide 'setup-lsp)
 ;;; setup-lsp ends here

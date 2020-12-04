@@ -42,8 +42,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (plantuml-mode ace-jump-mode ace-window projectile counsel ivy magit json-mode yaml-mode go-rename go-guru rats go-errcheck go-eldoc company-go company-lsp lsp-ui lsp-mode company yasnippet flycheck-color-mode-line flycheck abyss-theme exec-path-from-shell diminish nlinum auto-package-update use-package))))
+   '(plantuml-mode ace-jump-mode ace-window projectile counsel ivy magit json-mode yaml-mode go-rename go-guru rats go-errcheck go-eldoc company-go company-lsp lsp-ui lsp-mode company yasnippet flycheck-color-mode-line flycheck abyss-theme exec-path-from-shell diminish nlinum auto-package-update use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -31,6 +31,25 @@
 ;; Display tweaks
 (column-number-mode 1)
 
+;; Smaller compilation buffer
+(setq compilation-window-height 14)
+(defun my-compilation-hook ()
+  (when (not (get-buffer-window "*compilation*"))
+    (save-selected-window
+      (save-excursion
+        (let* ((w (split-window-vertically))
+               (h (window-height w)))
+          (select-window w)
+          (switch-to-buffer "*compilation*")
+          (shrink-window (- h compilation-window-height)))))))
+(add-hook 'compilation-mode-hook 'my-compilation-hook)
+
+;; Stop scrolling compilation window on first error
+(setq compilation-scroll-output 'first-error)
+
+;; Other Key bindings
+(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
+
 ;; below require will auto-create `package-user-dir' if it doesn't exist.
 (require 'package)
 (setq package-enable-at-startup nil
