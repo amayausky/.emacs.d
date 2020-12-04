@@ -4,6 +4,11 @@
 
 ;;; Code:
 
+;; Move custom generated stuff into a separate file
+(let ((usr-custom (locate-user-emacs-file "custom.el")))
+  (setq custom-file usr-custom))
+(let (load custom-file))
+
 ;; https://www.reddit.com/r/emacs/comments/3kqt6e/2_easy_little_known_steps_to_speed_up_emacs_start/
 (defvar gc-cons-threshold--orig gc-cons-threshold)
 (setq gc-cons-threshold (* 100 1024 1024)) ; 100 MB before garbage collection
