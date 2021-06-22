@@ -66,5 +66,11 @@
 				   ("gnu"          . 0)))
 (package-initialize)
 
+;; Save temp files to temp directory
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 (provide 'setup-general)
 ;;; setup-general ends here
