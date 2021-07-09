@@ -6,8 +6,10 @@
 
 (use-package lsp-mode
   :ensure t
-  :commands (lsp lsp-deferred)
-  :hook (go-mode . lsp-deferred))
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  :hook (go-mode . lsp)
+  :commands lsp)
 
 ;; Set up before-save hooks to format buffer and add/delete imports.
 ;; Make sure you don't have other gofmt/goimports hooks enabled.
@@ -20,6 +22,12 @@
 (use-package lsp-ui
   :ensure t
   :commands lsp-ui-mode)
+(use-package lsp-ivy
+  :ensure t
+  :commands lsp-ivy-workspace-symbol)
+(use-package lsp-treemacs
+  :ensure t
+  :commands lsp-treemacs-errors-list)
 
 (provide 'setup-lsp)
 ;;; setup-lsp ends here
