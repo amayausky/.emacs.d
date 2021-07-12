@@ -30,6 +30,7 @@
 (require 'setup-projectile)
 (require 'setup-ace-window)
 (require 'setup-org-mode)
+(require 'setup-flyspell)
 
 (provide 'init)
 ;;; init.el ends here
