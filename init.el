@@ -8,6 +8,7 @@
 
 ;; general, non-package specific setup
 (require 'setup-general)
+(require 'setup-tabs)
 
 ;; install use-package
 (require 'setup-use-package)
