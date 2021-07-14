@@ -32,6 +32,7 @@
 (require 'setup-ace-window)
 (require 'setup-org-mode)
 (require 'setup-flyspell)
+(require 'setup-sql)
 
 (provide 'init)
 ;;; init.el ends here
