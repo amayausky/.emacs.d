@@ -18,8 +18,6 @@
   (setq indent-tabs-mode t)
   (setq tab-width custom-tab-width))
 
-;; Making electric-indent behave sanely
-(setq-default electric-indent-inhibit t)
 
 ;; Make the backspace properly erase the tab instead of
 ;; removing 1 space at a time.
