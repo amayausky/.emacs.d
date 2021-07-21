@@ -5,9 +5,23 @@
 ;;; Code:
 
 (use-package counsel
+  :ensure t
   :diminish counsel-mode
+  :init
+  (ivy-mode 1)
+  (counsel-mode 1)
   :config
-  (counsel-mode 1))
+  (setq ivy-height 20)
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) "))
+
+; Standard commands
+(global-set-key (kbd "C-s") 'swiper-isearch)
+(global-set-key (kbd "C-c v") 'ivy-push-view)
+(global-set-key (kbd "C-c V") 'ivy-pop-view)
+
+; Ivy resume
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 ; Standard commands
 (global-set-key (kbd "M-x") 'counsel-M-x)
