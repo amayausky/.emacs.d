@@ -18,19 +18,21 @@
   (setq indent-tabs-mode t)
   (setq tab-width custom-tab-width))
 
+;; Visualize tabs as a pipe character - "|"
+(defun visualize-tabs ()
+  (setq whitespace-style '(face tabs tab-mark trailing))
+  (custom-set-faces
+   '(whitespace-tab ((t (:foreground "#636363"))))))
+
+;; This will also show trailing characters as they are useful to spot.
+(defun visualize-whitespace ()
+  (setq whitespace-display-mappings
+	'((tab-mark 9 [124 9] [92 9]))) ; 124 is the ascii ID for '\|'
+  (global-whitespace-mode)) ; Enable whitespace mode everywhere
 
 ;; Make the backspace properly erase the tab instead of
 ;; removing 1 space at a time.
 (setq backward-delete-char-untabify-method 'hungry)
-
-;; Visualize tabs as a pipe character - "|"
-;; This will also show trailing characters as they are useful to spot.
-(setq whitespace-style '(face tabs tab-mark trailing))
-(custom-set-faces
- '(whitespace-tab ((t (:foreground "#636363")))))
-(setq whitespace-display-mappings
-  '((tab-mark 9 [124 9] [92 9]))) ; 124 is the ascii ID for '\|'
-(global-whitespace-mode) ; Enable whitespace mode everywhere
 
 (provide 'setup-tabs)
 ;;; setup-tabs ends here
