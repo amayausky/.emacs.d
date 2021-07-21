@@ -26,6 +26,7 @@
 (require 'setup-json-mode)
 (require 'setup-markdown-mode)
 (require 'setup-magit)
+(require 'setup-smex)
 (require 'setup-counsel)
 (require 'setup-projectile)
 (require 'setup-ace-window)
