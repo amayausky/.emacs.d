@@ -27,8 +27,7 @@
 ;; This will also show trailing characters as they are useful to spot.
 (defun visualize-whitespace ()
   (setq whitespace-display-mappings
-	'((tab-mark 9 [124 9] [92 9]))) ; 124 is the ascii ID for '\|'
-  (global-whitespace-mode)) ; Enable whitespace mode everywhere
+	'((tab-mark 9 [124 9] [92 9])))) ; 124 is the ascii ID for '\|'
 
 ;; Make the backspace properly erase the tab instead of
 ;; removing 1 space at a time.
