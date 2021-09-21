@@ -33,6 +33,7 @@
 (require 'setup-org-mode)
 (require 'setup-flyspell)
 (require 'setup-sql)
+(require 'setup-dockerfile)
 
 (provide 'init)
 ;;; init.el ends here
