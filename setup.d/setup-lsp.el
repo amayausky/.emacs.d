@@ -8,7 +8,7 @@
   :ensure t
   :init
   (setq lsp-keymap-prefix "C-c l")
-  :hook (go-mode . lsp)
+  :hook (go-mode . lsp-deferred)
   :commands lsp)
 
 ;; Set up before-save hooks to format buffer and add/delete imports.
